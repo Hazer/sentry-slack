@@ -106,7 +106,8 @@ class SlackPlugin(notify.NotificationPlugin):
     project_conf_form = SlackOptionsForm
 
     def is_configured(self, project):
-        return all((self.get_option(k, project) for k in ('webhook',)))
+        return True
+        #return all((self.get_option(k, project) for k in ('webhook',)))
 
     def color_for_group(self, group):
         return '#' + LEVEL_TO_COLOR.get(group.get_level_display(), 'error')
