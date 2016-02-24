@@ -5,6 +5,14 @@ sentry_slack.plugin
 :copyright: (c) 2015 by Sentry Team, see AUTHORS for more details.
 :license: BSD, see LICENSE for more details.
 """
+
+from __future__ import absolute_import
+
+import logging
+import sentry
+
+from django.conf import settings
+
 import operator
 import sentry_slack
 
@@ -92,6 +100,7 @@ class SlackPlugin(notify.NotificationPlugin):
     title = 'Slack'
     slug = 'slack'
     description = 'Post notifications to a Slack channel.'
+    conf_title = title
     conf_key = 'slack'
     version = sentry_slack.VERSION
     project_conf_form = SlackOptionsForm
