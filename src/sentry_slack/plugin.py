@@ -102,7 +102,7 @@ class SlackPlugin(notify.NotificationPlugin):
     description = 'Post notifications to a Slack channel.'
     conf_title = title
     conf_key = 'slack'
-    version = sentry_slack.VERSION
+    version = 6
     project_default_enabled = True
     project_conf_form = SlackOptionsForm
 
