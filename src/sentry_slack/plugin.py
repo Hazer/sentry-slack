@@ -103,10 +103,12 @@ class SlackPlugin(notify.NotificationPlugin):
     conf_title = title
     conf_key = 'slack'
     version = sentry_slack.VERSION
+    project_default_enabled = True
     project_conf_form = SlackOptionsForm
 
     def is_configured(self, project):
-        return all((self.get_option(k, project) for k in ('webhook',)))
+        return True
+        #return all((self.get_option(k, project) for k in ('webhook',)))
 
     def color_for_group(self, group):
         return '#' + LEVEL_TO_COLOR.get(group.get_level_display(), 'error')
